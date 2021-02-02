@@ -11,5 +11,4 @@ import Foundation
 enum EntryError: LocalizedError {
     case ckError(Error)
     case unableToUnwrap
-    
 }//End of Enum
