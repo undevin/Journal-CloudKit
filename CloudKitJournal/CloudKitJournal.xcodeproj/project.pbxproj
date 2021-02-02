@@ -7,6 +7,12 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		03A1619225C8B4C500FAFC1A /* Entry.swift in Sources */ = {isa = PBXBuildFile; fileRef = 03A1619125C8B4C500FAFC1A /* Entry.swift */; };
+		03A1619625C8BC6F00FAFC1A /* EntryController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 03A1619525C8BC6F00FAFC1A /* EntryController.swift */; };
+		03A1619A25C8BF4900FAFC1A /* EntryError.swift in Sources */ = {isa = PBXBuildFile; fileRef = 03A1619925C8BF4900FAFC1A /* EntryError.swift */; };
+		03A1619D25C8CA5600FAFC1A /* EntryListTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 03A1619C25C8CA5600FAFC1A /* EntryListTableViewController.swift */; };
+		03A161A025C8CC0A00FAFC1A /* EntryDetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 03A1619F25C8CC0A00FAFC1A /* EntryDetailViewController.swift */; };
+		03A161A625C8E87B00FAFC1A /* DateFormatterExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 03A161A525C8E87B00FAFC1A /* DateFormatterExtension.swift */; };
 		85858B84242D081200C5ECA2 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 85858B83242D081200C5ECA2 /* AppDelegate.swift */; };
 		85858B86242D081200C5ECA2 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 85858B85242D081200C5ECA2 /* SceneDelegate.swift */; };
 		85858B8B242D081200C5ECA2 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 85858B89242D081200C5ECA2 /* Main.storyboard */; };
@@ -16,6 +22,12 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		03A1619125C8B4C500FAFC1A /* Entry.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Entry.swift; sourceTree = "<group>"; };
+		03A1619525C8BC6F00FAFC1A /* EntryController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EntryController.swift; sourceTree = "<group>"; };
+		03A1619925C8BF4900FAFC1A /* EntryError.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EntryError.swift; sourceTree = "<group>"; };
+		03A1619C25C8CA5600FAFC1A /* EntryListTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EntryListTableViewController.swift; sourceTree = "<group>"; };
+		03A1619F25C8CC0A00FAFC1A /* EntryDetailViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EntryDetailViewController.swift; sourceTree = "<group>"; };
+		03A161A525C8E87B00FAFC1A /* DateFormatterExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DateFormatterExtension.swift; sourceTree = "<group>"; };
 		85858B80242D081200C5ECA2 /* CloudKitJournal.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = CloudKitJournal.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		85858B83242D081200C5ECA2 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		85858B85242D081200C5ECA2 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -39,6 +51,65 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		03A1618B25C8B44700FAFC1A /* Models */ = {
+			isa = PBXGroup;
+			children = (
+				03A1619125C8B4C500FAFC1A /* Entry.swift */,
+			);
+			path = Models;
+			sourceTree = "<group>";
+		};
+		03A1618C25C8B45200FAFC1A /* Views */ = {
+			isa = PBXGroup;
+			children = (
+				03A1618D25C8B45B00FAFC1A /* Storyboards */,
+			);
+			path = Views;
+			sourceTree = "<group>";
+		};
+		03A1618D25C8B45B00FAFC1A /* Storyboards */ = {
+			isa = PBXGroup;
+			children = (
+				85858B89242D081200C5ECA2 /* Main.storyboard */,
+			);
+			path = Storyboards;
+			sourceTree = "<group>";
+		};
+		03A1618E25C8B47900FAFC1A /* Controllers */ = {
+			isa = PBXGroup;
+			children = (
+				03A1619025C8B48500FAFC1A /* View Controllers */,
+				03A1618F25C8B47F00FAFC1A /* Model Controllers */,
+			);
+			path = Controllers;
+			sourceTree = "<group>";
+		};
+		03A1618F25C8B47F00FAFC1A /* Model Controllers */ = {
+			isa = PBXGroup;
+			children = (
+				03A1619525C8BC6F00FAFC1A /* EntryController.swift */,
+			);
+			path = "Model Controllers";
+			sourceTree = "<group>";
+		};
+		03A1619025C8B48500FAFC1A /* View Controllers */ = {
+			isa = PBXGroup;
+			children = (
+				03A1619C25C8CA5600FAFC1A /* EntryListTableViewController.swift */,
+				03A1619F25C8CC0A00FAFC1A /* EntryDetailViewController.swift */,
+			);
+			path = "View Controllers";
+			sourceTree = "<group>";
+		};
+		03A1619825C8BF3400FAFC1A /* Helpers */ = {
+			isa = PBXGroup;
+			children = (
+				03A1619925C8BF4900FAFC1A /* EntryError.swift */,
+				03A161A525C8E87B00FAFC1A /* DateFormatterExtension.swift */,
+			);
+			path = Helpers;
+			sourceTree = "<group>";
+		};
 		85858B77242D081200C5ECA2 = {
 			isa = PBXGroup;
 			children = (
@@ -59,8 +130,11 @@
 		85858B82242D081200C5ECA2 /* CloudKitJournal */ = {
 			isa = PBXGroup;
 			children = (
+				03A1619825C8BF3400FAFC1A /* Helpers */,
+				03A1618E25C8B47900FAFC1A /* Controllers */,
+				03A1618B25C8B44700FAFC1A /* Models */,
+				03A1618C25C8B45200FAFC1A /* Views */,
 				85858B9D242D0A8B00C5ECA2 /* CloudKitJournal.entitlements */,
-				85858B89242D081200C5ECA2 /* Main.storyboard */,
 				85858B97242D082D00C5ECA2 /* Resources */,
 			);
 			path = CloudKitJournal;
@@ -157,7 +231,13 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				03A1619225C8B4C500FAFC1A /* Entry.swift in Sources */,
+				03A1619A25C8BF4900FAFC1A /* EntryError.swift in Sources */,
+				03A1619D25C8CA5600FAFC1A /* EntryListTableViewController.swift in Sources */,
 				85858B84242D081200C5ECA2 /* AppDelegate.swift in Sources */,
+				03A1619625C8BC6F00FAFC1A /* EntryController.swift in Sources */,
+				03A161A025C8CC0A00FAFC1A /* EntryDetailViewController.swift in Sources */,
+				03A161A625C8E87B00FAFC1A /* DateFormatterExtension.swift in Sources */,
 				85858B86242D081200C5ECA2 /* SceneDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -304,13 +384,13 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_ENTITLEMENTS = CloudKitJournal/CloudKitJournal.entitlements;
 				CODE_SIGN_STYLE = Automatic;
-				DEVELOPMENT_TEAM = 4J7B9732LY;
-				INFOPLIST_FILE = "$(SRCROOT)/CloudKitJournal/Resources/Info.plist";
+				DEVELOPMENT_TEAM = 9J63HYQ843;
+				INFOPLIST_FILE = CloudKitJournal/Resources/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				PRODUCT_BUNDLE_IDENTIFIER = CloudKitJournal;
+				PRODUCT_BUNDLE_IDENTIFIER = com.devinflora.CloudKitJournal;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
@@ -323,13 +403,13 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_ENTITLEMENTS = CloudKitJournal/CloudKitJournal.entitlements;
 				CODE_SIGN_STYLE = Automatic;
-				DEVELOPMENT_TEAM = 4J7B9732LY;
-				INFOPLIST_FILE = "$(SRCROOT)/CloudKitJournal/Resources/Info.plist";
+				DEVELOPMENT_TEAM = 9J63HYQ843;
+				INFOPLIST_FILE = CloudKitJournal/Resources/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				PRODUCT_BUNDLE_IDENTIFIER = CloudKitJournal;
+				PRODUCT_BUNDLE_IDENTIFIER = com.devinflora.CloudKitJournal;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
