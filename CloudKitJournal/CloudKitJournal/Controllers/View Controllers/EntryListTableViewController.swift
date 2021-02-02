@@ -13,7 +13,7 @@ class EntryListTableViewController: UITableViewController {
     // MARK: - Lifecycle
     override func viewDidLoad() {
         super.viewDidLoad()
-        EntryController.shared.fetchEntriesWith { (result) in
+        EntryController.shared.fetchEntriesWith { (_) in
             self.updateView()
         }
     }
@@ -32,7 +32,6 @@ class EntryListTableViewController: UITableViewController {
     
     // MARK: - Table view data source
     override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        // #warning Incomplete implementation, return the number of rows
         return EntryController.shared.entries.count
     }
     
@@ -45,7 +44,23 @@ class EntryListTableViewController: UITableViewController {
         
         return cell
     }
-
+    
+    override func tableView(_ tableView: UITableView, commit editingStyle: UITableViewCell.EditingStyle, forRowAt indexPath: IndexPath) {
+        if editingStyle == .delete {
+            let entryToDelete = EntryController.shared.entries[indexPath.row]
+            EntryController.shared.delete(entry: entryToDelete) { (result) in
+                DispatchQueue.main.async {
+                    switch result {
+                    case .success(_):
+                        tableView.deleteRows(at: [indexPath], with: .fade)
+                    case .failure(let error):
+                        print(error)
+                    }
+                }
+            }
+        }
+    }
+    
     // MARK: - Navigation
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         if segue.identifier == "toEntryDetails" {

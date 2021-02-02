@@ -39,7 +39,7 @@ class EntryController {
         }
     }
     
-    func fetchEntriesWith(completion: @escaping(Result<[Entry]?,EntryError>) -> Void) {
+    func fetchEntriesWith(completion: @escaping (Result<[Entry]?,EntryError>) -> Void) {
         let fetchPredicate = NSPredicate(value: true)
         let query = CKQuery(recordType: EntryConstants.recordType, predicate: fetchPredicate)
         
@@ -56,6 +56,25 @@ class EntryController {
             let fetchedEntries = records.compactMap { Entry(ckRecord: $0) }
             self.entries = fetchedEntries
             completion(.success(fetchedEntries))
+        }
+    }
+    
+    func delete(entry: Entry, completion: @escaping (Result<String,EntryError>) -> Void) {
+        let ckRecord = CKRecord(entry: entry)
+        privateDB.delete(withRecordID: ckRecord.recordID) { (record, error) in
+            DispatchQueue.main.async {
+                if let error = error {
+                    print("===== ERROR =====")
+                    print("Function: \(#function)")
+                    print(error)
+                    print("Description: \(error.localizedDescription)")
+                    print("===== ERROR =====")
+                    return completion(.failure(.ckError(error)))
+                }
+                guard let index = self.entries.firstIndex(of: entry) else { return completion(.failure(.unableToUnwrap)) }
+                self.entries.remove(at: index)
+                completion(.success("Entry Removed"))
+            }
         }
     }
 }//End of Class

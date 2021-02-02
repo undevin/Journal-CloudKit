@@ -30,13 +30,17 @@ class Entry {
 }//End of Class
 
 // MARK: - Extensions
-extension Entry {
+extension Entry: Equatable {
+    static func == (lhs: Entry, rhs: Entry) -> Bool {
+        return lhs.ckRecordID == rhs.ckRecordID
+    }
+    
     convenience init?(ckRecord: CKRecord) {
         guard let title = ckRecord[EntryConstants.titleKey] as? String,
               let body = ckRecord[EntryConstants.bodyKey] as? String,
               let timestamp = ckRecord[EntryConstants.timestampKey] as? Date else { return nil }
-        self.init(title: title, body: body, timestamp: timestamp)
-    }       
+        self.init(title: title, body: body, timestamp: timestamp, ckRecordID: ckRecord.recordID)
+    }
 }//End of Extension
 
 extension CKRecord {
